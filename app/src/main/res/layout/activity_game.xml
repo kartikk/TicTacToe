@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/statusTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/b21" />
+
+        <ImageButton
+            android:id="@+id/b00"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="blockClicked"
+            app:layout_constraintBottom_toTopOf="@+id/b10"
+            app:layout_constraintEnd_toStartOf="@+id/b01">
+
+            <tag
+                android:id="@+id/xCo"
+                android:value="0" />
+
+            <tag
+                android:id="@+id/yCo"
+                android:value="0" />
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/b01"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:layout_marginBottom="8dp"
+            android:onClick="blockClicked"
+            app:layout_constraintBottom_toTopOf="@+id/b11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <tag
+                android:id="@id/xCo"
+                android:value="0" />
+
+            <tag
+                android:id="@id/yCo"
+                android:value="1" />
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/b02"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:onClick="blockClicked"
+            app:layout_constraintBottom_toTopOf="@+id/b12"
+            app:layout_constraintStart_toEndOf="@+id/b01">
+
+            <tag
+                android:id="@id/xCo"
+                android:value="0" />
+
+            <tag
+                android:id="@id/yCo"
+                android:value="2" />
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/b10"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:layout_marginEnd="8dp"
+            android:onClick="blockClicked"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/b11"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <tag
+                android:id="@id/xCo"
+                android:value="1" />
+
+            <tag
+                android:id="@id/yCo"
+                android:value="0" />
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/b11"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:onClick="blockClicked"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/b00"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <tag
+                android:id="@id/xCo"
+                android:value="1" />
+
+            <tag
+                android:id="@id/yCo"
+                android:value="1" />
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/b12"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:layout_marginStart="8dp"
+            android:onClick="blockClicked"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/b11"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <tag
+                android:id="@id/xCo"
+                android:value="1" />
+
+            <tag
+                android:id="@id/yCo"
+                android:value="2" />
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/b20"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:onClick="blockClicked"
+            app:layout_constraintEnd_toStartOf="@+id/b21"
+            app:layout_constraintTop_toBottomOf="@+id/b10">
+
+            <tag
+                android:id="@id/xCo"
+                android:value="2" />
+
+            <tag
+                android:id="@id/yCo"
+                android:value="0" />
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/b21"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:layout_marginTop="8dp"
+            android:onClick="blockClicked"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/b11">
+
+            <tag
+                android:id="@id/xCo"
+                android:value="2" />
+
+            <tag
+                android:id="@id/yCo"
+                android:value="1" />
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/b22"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:onClick="blockClicked"
+            app:layout_constraintStart_toEndOf="@+id/b21"
+            app:layout_constraintTop_toBottomOf="@+id/b12">
+
+            <tag
+                android:id="@id/xCo"
+                android:value="2" />
+
+            <tag
+                android:id="@id/yCo"
+                android:value="2" />
+        </ImageButton>
+
+        <Button
+            android:id="@+id/restartButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:onClick="reset"
+            android:text="@string/restart_b_tex"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

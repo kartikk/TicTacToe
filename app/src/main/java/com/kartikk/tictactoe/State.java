@@ -1,6 +1,5 @@
 package com.kartikk.tictactoe;
 
-
 import android.app.Activity;
 import android.content.Context;
 import android.widget.ImageButton;
@@ -10,18 +9,24 @@ import java.lang.ref.WeakReference;
 public class State {
     // 0 empty, 1 X's turn, 2 O's turn
     private int[][] board;
+    public static final int BOARD_EMPTY = 0, X_TURN = 1, O_TURN = 2;
+
+    // 0 two player, 1 two network player, 2 single local player
+    private int mode;
+    public static final int TWO_PLAYER_MODE = 0, TWO_PLAYER_NW_MODE = 1, SINGLE_PLAYER_MODE = 2;
 
     private WeakReference<Activity> gameActivity;
     private Context context;
 
     private static final int score_win = 3;
-    private int turn = 1;
+    private int turn = X_TURN;
     private int turnCount = 0;
     private Boolean gamePaused = false;
 
 
-    public State(Activity gameActivity) {
+    public State(Activity gameActivity, int mode) {
         this.board = new int[3][3];
+        this.mode = mode;
         this.gameActivity = new WeakReference<>(gameActivity);
         this.context = gameActivity.getApplicationContext();
     }
@@ -35,7 +40,7 @@ public class State {
     }
 
     /**
-     * Sets the board value at the given x,y
+     * Sets the board value at the given x,y. Takes care of updating the UI
      * WARNING!! must be called from the UI thread
      *
      * @param x     x coordinate of the last move
@@ -47,7 +52,7 @@ public class State {
         if (gameActivity.get() != null) {
             int id = context.getResources().getIdentifier("b" + x + y, "id", context.getPackageName());
             if (id != 0) {
-                if (value == 0) {
+                if (value == BOARD_EMPTY) {
                     ((ImageButton) gameActivity.get().findViewById(id)).setImageDrawable(null);
                 } else {
                     ((ImageButton) gameActivity.get().findViewById(id)).setImageResource(value == 1 ? R.drawable.x_vector : R.drawable.circle_vector);
@@ -115,15 +120,15 @@ public class State {
         }
         if (winStraight(x, y) || winDiag(x, y)) {
             // Game won
-            gameActivity.setStatusTV(turn == 1 ? R.string.x_win_tv : R.string.o_win_tv);
+            gameActivity.setStatusTV(turn == X_TURN ? R.string.x_win_tv : R.string.o_win_tv);
             gamePaused = true;
         } else {
             // change turn
-            if (turn == 1) {
-                turn = 2;
+            if (turn == X_TURN) {
+                turn = O_TURN;
                 gameActivity.setStatusTV(R.string.o_turn);
             } else {
-                turn = 1;
+                turn = X_TURN;
                 gameActivity.setStatusTV(R.string.x_turn);
             }
             turnCount++;
@@ -145,7 +150,7 @@ public class State {
                 setValue(i, j, 0);
             }
         }
-        turn = 1;
+        turn = X_TURN;
         turnCount = 0;
         gamePaused = false;
     }

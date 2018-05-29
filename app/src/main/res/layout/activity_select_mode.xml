@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ModeSelectActivity">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/twoPlayerButton"
+            android:layout_width="@dimen/mode_button_width"
+            android:layout_height="@dimen/mode_button_height"
+            android:layout_marginBottom="12dp"
+            android:onClick="modeButtonClicked"
+            android:tag="0"
+            android:text="@string/two_player_button"
+            app:layout_constraintBottom_toTopOf="@+id/twoPlayerRemoteButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/twoPlayerRemoteButton"
+            android:layout_width="@dimen/mode_button_width"
+            android:layout_height="@dimen/mode_button_height"
+            android:onClick="modeButtonClicked"
+            android:tag="1"
+            android:text="@string/two_player_remote_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/singlePlayerButton"
+            android:layout_width="@dimen/mode_button_width"
+            android:layout_height="@dimen/mode_button_height"
+            android:layout_marginTop="12dp"
+            android:onClick="modeButtonClicked"
+            android:tag="2"
+            android:text="@string/single_player_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/twoPlayerRemoteButton" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

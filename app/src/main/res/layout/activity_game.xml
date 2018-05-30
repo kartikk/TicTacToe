@@ -19,14 +19,16 @@
             android:id="@+id/statusTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/start_tv"
+            android:layout_marginTop="22dp"
+            android:text="@string/your_turn"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/b21" />
 
         <ImageButton
             android:id="@+id/b00"
+            style="@style/BoardButton"
             android:layout_width="@dimen/button_size"
             android:layout_height="@dimen/button_size"
             android:layout_marginBottom="8dp"
@@ -46,6 +48,7 @@
 
         <ImageButton
             android:id="@+id/b01"
+            style="@style/BoardButton"
             android:layout_width="@dimen/button_size"
             android:layout_height="@dimen/button_size"
             android:layout_marginBottom="8dp"
@@ -66,6 +69,7 @@
 
         <ImageButton
             android:id="@+id/b02"
+            style="@style/BoardButton"
             android:layout_width="@dimen/button_size"
             android:layout_height="@dimen/button_size"
             android:layout_marginBottom="8dp"
@@ -85,6 +89,7 @@
 
         <ImageButton
             android:id="@+id/b10"
+            style="@style/BoardButton"
             android:layout_width="@dimen/button_size"
             android:layout_height="@dimen/button_size"
             android:layout_marginEnd="8dp"
@@ -104,6 +109,7 @@
 
         <ImageButton
             android:id="@+id/b11"
+            style="@style/BoardButton"
             android:layout_width="@dimen/button_size"
             android:layout_height="@dimen/button_size"
             android:onClick="blockClicked"
@@ -125,6 +131,7 @@
 
         <ImageButton
             android:id="@+id/b12"
+            style="@style/BoardButton"
             android:layout_width="@dimen/button_size"
             android:layout_height="@dimen/button_size"
             android:layout_marginStart="8dp"
@@ -144,6 +151,7 @@
 
         <ImageButton
             android:id="@+id/b20"
+            style="@style/BoardButton"
             android:layout_width="@dimen/button_size"
             android:layout_height="@dimen/button_size"
             android:layout_marginEnd="8dp"
@@ -163,6 +171,7 @@
 
         <ImageButton
             android:id="@+id/b21"
+            style="@style/BoardButton"
             android:layout_width="@dimen/button_size"
             android:layout_height="@dimen/button_size"
             android:layout_marginTop="8dp"
@@ -183,6 +192,7 @@
 
         <ImageButton
             android:id="@+id/b22"
+            style="@style/BoardButton"
             android:layout_width="@dimen/button_size"
             android:layout_height="@dimen/button_size"
             android:layout_marginStart="8dp"
@@ -202,11 +212,12 @@
 
         <Button
             android:id="@+id/restartButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="24dp"
             android:onClick="reset"
             android:text="@string/restart_b_tex"
+            android:textColor="@color/splashBackground"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />

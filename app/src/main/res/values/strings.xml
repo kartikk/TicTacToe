@@ -11,4 +11,10 @@
     <string name="two_player_button">Two Player</string>
     <string name="single_player_button">Single Player</string>
     <string name="two_player_remote_button">Two Player Remote</string>
+    <string name="opp_uid_hint">Enter opponent ID</string>
+    <string name="pair_button">Join!!</string>
+    <string name="splash_text">Tic\nTac\nToe</string>
+    <string name="pairing_message">Enter opponent\'s ID or share your ID</string>
+    <string name="your_turn">Your turn!!</string>
+    <string name="opponent_turn">Opponent\'s Turn</string>
 </resources>

@@ -10,6 +10,7 @@ import android.view.View;
 
 import com.kartikk.tictactoe.databinding.ActivitySelectModeBinding;
 import com.kartikk.tictactoe.util.Constants;
+import com.kartikk.tictactoe.util.Helper;
 
 public class ModeSelectActivity extends AppCompatActivity {
 
@@ -19,14 +20,20 @@ public class ModeSelectActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Helper.getCustomWebSocket();
         binding = DataBindingUtil.setContentView(this, R.layout.activity_select_mode);
-        setSupportActionBar((Toolbar) binding.toolbar);
         context = this;
     }
 
     public void modeButtonClicked(View v) {
-        Intent intent = new Intent(this, GameActivity.class);
-        intent.putExtra(Constants.MODE_EXTRA_ID, Integer.parseInt(v.getTag().toString()));
+        Intent intent;
+        int tag = Integer.parseInt(v.getTag().toString());
+        if( tag == State.TWO_PLAYER_NW_MODE) {
+            intent = new Intent(this, PairingActivity.class);
+        } else {
+            intent = new Intent(this, GameActivity.class);
+        }
+        intent.putExtra(Constants.MODE_EXTRA_ID, tag);
         context.startActivity(intent);
     }
 }

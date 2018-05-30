@@ -192,7 +192,9 @@ public class State {
             }
 
             case SINGLE_PLAYER_MODE: {
-
+                playTask = new CPUPlayTask(this);
+                playTask.execute(new Pair<>(x, y));
+                break;
             }
         }
     }

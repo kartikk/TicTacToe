@@ -1,6 +1,6 @@
 # TicTacToe
 Android application for Tic Tac Toe
-Teach Stack: Android, Heroku
+Teach Stack: Android, NodeJs, Heroku
 
 # Contributors
 [Kartikk](https://github.com/kartikk)
